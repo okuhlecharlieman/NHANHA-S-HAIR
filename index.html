@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>NHANANA’S HAIR — Price List Flyer (A4)</title>
+<style>
+  /* A4 setup */
+  @page {
+    size: A4;
+    margin: 14mm;
+  }
+  :root{
+    --bg:#fff8fb;          /* soft blush */
+    --ink:#2a1f1b;         /* deep cocoa */
+    --gold:#c7a159;        /* rich gold */
+    --rose:#f5d9e6;        /* pale rose divider */
+    --accent:#b87a5b;      /* warm bronze accent */
+  }
+  html,body{
+    background:#f3f3f3;
+    color:var(--ink);
+    font-family: "Inter", system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji", "Segoe UI Symbol";
+    line-height:1.35;
+  }
+  .page{
+    width: 210mm;
+    min-height: 297mm;
+    margin: 0 auto;
+    background: linear-gradient(180deg, #fff 0%, var(--bg) 100%);
+    box-shadow: 0 6px 24px rgba(0,0,0,.08);
+    position: relative;
+    overflow: hidden;
+  }
+  /* Decorative corners */
+  .corner{
+    position:absolute;
+    pointer-events:none;
+    border: 2px solid var(--gold);
+    width: 52mm; height: 52mm;
+    opacity:.5;
+  }
+  .corner.tl{ top:10mm; left:10mm; border-right:none; border-bottom:none; border-radius:10mm 0 0 0;}
+  .corner.tr{ top:10mm; right:10mm; border-left:none; border-bottom:none; border-radius:0 10mm 0 0;}
+  .corner.bl{ bottom:10mm; left:10mm; border-right:none; border-top:none; border-radius:0 0 0 10mm;}
+  .corner.br{ bottom:10mm; right:10mm; border-left:none; border-top:none; border-radius:0 0 10mm 0;}
+
+  /* Header */
+  .header{
+    text-align:center;
+    padding: 24mm 18mm 14mm;
+    position: relative;
+  }
+  .brand{
+    font-family: "Playfair Display", Georgia, 'Times New Roman', Times, serif;
+    font-weight: 700;
+    letter-spacing: .06em;
+    font-size: 22pt;
+  }
+  .sub{
+    margin-top: 6px;
+    font-size: 11pt;
+    color:#644b41;
+    letter-spacing:.03em;
+  }
+  .rule{
+    width: 84mm;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, var(--gold), transparent);
+    margin: 10px auto 0;
+  }
+
+  /* Sections */
+  .content{
+    padding: 0 18mm 18mm;
+    display:grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 12mm 14mm;
+  }
+  .section{
+    background:#ffffffcc;
+    border: 1px solid #ead9c7;
+    border-radius: 10px;
+    padding: 10mm;
+    box-shadow: 0 4px 10px rgba(0,0,0,.03);
+    backdrop-filter: blur(1px);
+  }
+  .section.full{ grid-column: 1 / -1; }
+
+  .title{
+    font-family: "Playfair Display", Georgia, serif;
+    font-size: 14pt;
+    color: var(--ink);
+    margin: 0 0 6px;
+  }
+  .title .badge{
+    font-family: inherit;
+    font-weight: 600;
+    font-size: 10pt;
+    padding: 3px 8px;
+    border: 1px solid var(--gold);
+    color: var(--ink);
+    border-radius: 999px;
+    background: #fff7ea;
+    margin-left: 8px;
+    white-space: nowrap;
+  }
+  .note{
+    font-size: 9.5pt;
+    color:#6f5247;
+    margin-bottom: 8px;
+  }
+
+  .list{
+    margin: 8px 0 0;
+    padding: 0;
+    list-style: none;
+    font-size: 10.5pt;
+  }
+  .item{
+    display:flex;
+    justify-content: space-between;
+    padding: 6px 0;
+    border-bottom: 1px dashed #ead9c7;
+  }
+  .item:last-child{ border-bottom: none; }
+  .left{
+    display:flex; gap:8px; align-items:baseline;
+  }
+  .len{
+    font-weight: 600; min-width: 24mm;
+  }
+  .price{
+    font-weight: 700; color: var(--accent);
+  }
+  .was{
+    color:#9a7f73; text-decoration: line-through; margin-right:6px; font-weight:500;
+  }
+
+  /* Services and contact */
+  .services .item, .lashes .item{
+    border-bottom: 1px dotted #ead9c7;
+  }
+
+  .footer{
+    grid-column: 1 / -1;
+    text-align:center;
+    margin-top: 2mm;
+    color:#5a453d;
+    font-size: 10pt;
+  }
+  .contact{
+    display:flex; gap: 10mm; justify-content:center; flex-wrap: wrap;
+    margin-top: 6px;
+  }
+  .chip{
+    border:1px solid var(--gold);
+    background:#fffdfa;
+    padding:8px 12px;
+    border-radius:999px;
+    font-weight:600;
+  }
+  /* Print tweaks */
+  @media print{
+    html,body{ background:#fff; }
+    .page{ box-shadow:none; }
+  }
+</style>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="page">
+    <div class="corner tl"></div>
+    <div class="corner tr"></div>
+    <div class="corner bl"></div>
+    <div class="corner br"></div>
+
+    <header class="header">
+      <div class="brand">NHANANA’S HAIR</div>
+      <div class="sub">Premium Wigs • Frontals • Lashes • Installations</div>
+      <div class="rule"></div>
+    </header>
+
+    <main class="content">
+      <!-- 14A Grade Full Frontal -->
+      <section class="section">
+        <h2 class="title">14A Grade Full Frontal <span class="badge">+R100 for curls</span></h2>
+        <div class="note">Available in any colour</div>
+        <ul class="list">
+          <li class="item"><span class="left"><span class="len">8”</span></span><span><span class="was">R750</span><span class="price">R680</span></span></li>
+          <li class="item"><span class="left"><span class="len">10”</span></span><span class="price">R850</span></li>
+          <li class="item"><span class="left"><span class="len">12”</span></span><span class="price">R950</span></li>
+          <li class="item"><span class="left"><span class="len">14”</span></span><span class="price">R1000</span></li>
+          <li class="item"><span class="left"><span class="len">16”</span></span><span class="price">R1100</span></li>
+          <li class="item"><span class="left"><span class="len">18”</span></span><span class="price">R1300</span></li>
+          <li class="item"><span class="left"><span class="len">20”</span></span><span class="price">R1450</span></li>
+          <li class="item"><span class="left"><span class="len">22”</span></span><span class="price">R1600</span></li>
+          <li class="item"><span class="left"><span class="len">24”</span></span><span class="price">R1750</span></li>
+          <li class="item"><span class="left"><span class="len">26”</span></span><span class="price">R1900</span></li>
+          <li class="item"><span class="left"><span class="len">28”</span></span><span><span class="was">R2200</span><span class="price">R2400</span></span></li>
+          <li class="item"><span class="left"><span class="len">30”</span></span><span class="price">R3000</span></li>
+        </ul>
+      </section>
+
+      <!-- 15A 3ways -->
+      <section class="section">
+        <h2 class="title">15A 3-Ways 4×4 Glueless <span class="badge">+R100 for curls</span></h2>
+        <div class="note">Available in any colour</div>
+        <ul class="list">
+          <li class="item"><span class="left"><span class="len">12”</span></span><span class="price">R900</span></li>
+          <li class="item"><span class="left"><span class="len">14”</span></span><span class="price">R1000</span></li>
+          <li class="item"><span class="left"><span class="len">16”</span></span><span class="price">R1100</span></li>
+          <li class="item"><span class="left"><span class="len">18”</span></span><span class="price">R1300</span></li>
+          <li class="item"><span class="left"><span class="len">20”</span></span><span class="price">R1400</span></li>
+          <li class="item"><span class="left"><span class="len">22”</span></span><span class="price">R1600</span></li>
+          <li class="item"><span class="left"><span class="len">24”</span></span><span class="price">R1800</span></li>
+        </ul>
+      </section>
+
+      <!-- Jerry Curls -->
+      <section class="section">
+        <h2 class="title">S.D.D Jerry Curls <span class="badge">+R100 for any colour</span></h2>
+        <ul class="list">
+          <li class="item"><span class="left"><span class="len">16”</span></span><span class="price">R1200</span></li>
+          <li class="item"><span class="left"><span class="len">18”</span></span><span class="price">R1400</span></li>
+          <li class="item"><span class="left"><span class="len">20”</span></span><span class="price">R1700</span></li>
+          <li class="item"><span class="left"><span class="len">22”</span></span><span class="price">R1900</span></li>
+          <li class="item"><span class="left"><span class="len">24”</span></span><span class="price">R2300</span></li>
+        </ul>
+      </section>
+
+      <!-- Pixie Curls -->
+      <section class="section">
+        <h2 class="title">S.D.D Pixie Curls Full Frontal <span class="badge">+R100 for colour</span></h2>
+        <ul class="list">
+          <li class="item"><span class="left"><span class="len">14”</span></span><span class="price">R1300</span></li>
+          <li class="item"><span class="left"><span class="len">16”</span></span><span class="price">R1600</span></li>
+          <li class="item"><span class="left"><span class="len">18”</span></span><span class="price">R1700</span></li>
+          <li class="item"><span class="left"><span class="len">20”</span></span><span class="price">R1900</span></li>
+          <li class="item"><span class="left"><span class="len">22”</span></span><span class="price">R2000</span></li>
+        </ul>
+      </section>
+
+      <!-- Services -->
+      <section class="section services">
+        <h2 class="title">Services</h2>
+        <ul class="list">
+          <li class="item"><span>FREE installation on your first purchase</span><span class="price">R0</span></li>
+          <li class="item"><span>Basic Installation</span><span class="price">R200</span></li>
+          <li class="item"><span>Styling</span><span class="price">R250</span></li>
+          <li class="item"><span>Wig Wash</span><span class="price">R100</span></li>
+          <li class="item"><span>Curls Treatment</span><span class="price">R100</span></li>
+          <li class="item"><span>Blow Dry + Flat Ironing</span><span class="price">R80</span></li>
+        </ul>
+      </section>
+
+      <!-- Lashes -->
+      <section class="section lashes">
+        <h2 class="title">Eye Lashes (Individuals)</h2>
+        <ul class="list">
+          <li class="item"><span>Cat Eye</span><span class="price">R200</span></li>
+          <li class="item"><span>Classic</span><span class="price">R150</span></li>
+          <li class="item"><span>Clusters</span><span class="price">R150</span></li>
+        </ul>
+      </section>
+
+      <!-- Contact -->
+      <div class="footer">
+        <div>Contact & Delivery</div>
+        <div class="contact">
+          <span class="chip">Phone: 067 969 9948</span>
+          <span class="chip">Pin: Cape Town, Delft</span>
+          <span class="chip">Delivery: 3–4 working days</span>
+        </div>
+      </div>
+    </main>
+  </div>
+</body>
+</html>
